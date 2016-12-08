@@ -25,6 +25,10 @@ public class LootManager : MonoBehaviour {
         private set;
     }
 
+    /// <summary> Possible power-ups that can spawn. </summary>
+    [SerializeField]
+    [Tooltip("Possible power-ups that can spawn.")]
+    private PowerUpItem[] powerUps;
 
     /// <summary>
     /// Initializes the singleton instance of the object.
@@ -51,6 +55,12 @@ public class LootManager : MonoBehaviour {
                 selectedLoot.Add(loot.lootIndex);
                 loot.gameObject.SetActive(true);
                 allLootList.RemoveAt(listIndex);
+            }
+            foreach (Loot loot in allLootList) {
+                if (Random.Range(0f, 1f) < 0.5f) {
+                    int powerUpIndex = Random.Range(0, powerUps.Length);
+                    GameObject.Instantiate(powerUps[powerUpIndex], loot.transform.position, Quaternion.identity);
+                }
             }
         } else {
             foreach (Loot loot in allLoot) {

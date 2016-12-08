@@ -6,9 +6,7 @@
 public class Health : MonoBehaviour {
     
     /// <summary> The maximum health of the player. </summary>
-    [SerializeField]
-    [Tooltip("The maximum health of the player.")]
-    private float maxHealth;
+    public float maxHealth;
     /// <summary> The current health of the player. </summary>
     public float health;
     /// <summary> The fraction of the player's health that remains. </summary>
