@@ -61,7 +61,6 @@ public class menuManager : MonoBehaviour {
 
     public void OnHelpClick()
     {
-        Debug.Log("Help pressed");
         mainmenu_buttons[highlighted].GetComponentInChildren<Text>().color = Color.white;
         EventSystem.current.SetSelectedGameObject(null);
         mainmenu_canvas.enabled = false;

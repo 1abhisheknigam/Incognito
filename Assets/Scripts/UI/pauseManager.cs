@@ -18,9 +18,6 @@ public class pauseManager : MonoBehaviour {
 	
 	// Update is called once per frame
     void Update () {
-        if (paused && Input.GetButtonDown("Fire2")) {
-            OnPauseQuitClick();
-        }
         if (Input.GetButtonDown("Pause")) {
             if (helpCanvas.enabled)
             {
