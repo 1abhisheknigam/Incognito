@@ -61,7 +61,6 @@ public class pauseManager : MonoBehaviour {
 
     public void OnHelpClick()
     {
-        Debug.Log("Presed help");
         EventSystem.current.SetSelectedGameObject(null);
         helpCanvas.enabled = true;
         helpCanvas.GetComponent<CanvasGroup>().interactable = true;
