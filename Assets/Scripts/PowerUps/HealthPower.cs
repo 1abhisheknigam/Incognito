@@ -5,6 +5,11 @@
 /// </summary>
 public class HealthPower : PowerUpItem {
 
+    /// <summary> The sound to play when collecting the item. </summary>
+    [SerializeField]
+    [Tooltip("The sound to play when collecting the item.")]
+    private AudioClip healthSound;
+
     /// <summary>
     /// Gets the duration.
     /// </summary>
@@ -27,5 +32,6 @@ public class HealthPower : PowerUpItem {
     /// </summary>
     /// <param name="player">The player to remove the buff from.</param>
     protected override void LoseBuff(GameObject player) {
+        player.GetComponent<AudioSource>().PlayOneShot(healthSound);
     }
 }
