@@ -53,11 +53,11 @@ public class Health : MonoBehaviour {
                 if (playSound) {
                     audioSource.PlayOneShot(damageSound);
                 }
-				particle.GetComponent<EllipsoidParticleEmitter>().Emit(30);
                 health -= damage;
                 if (health <= 0) {
                     Die();
                 }
+                particle.GetComponent<EllipsoidParticleEmitter>().Emit(30);
             }
         }
     }

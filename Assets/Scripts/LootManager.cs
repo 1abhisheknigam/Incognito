@@ -30,6 +30,9 @@ public class LootManager : MonoBehaviour {
     [Tooltip("Possible power-ups that can spawn.")]
     private PowerUpItem[] powerUps;
 
+    /// <summary> The indices of power-ups objects that were selected to appear in the level. </summary>
+    private static HashSet<int> selectedPowerUps;
+
     /// <summary>
     /// Initializes the singleton instance of the object.
     /// </summary>
@@ -49,6 +52,7 @@ public class LootManager : MonoBehaviour {
                 loot.gameObject.SetActive(false);
             }
             selectedLoot = new HashSet<int>();
+            selectedPowerUps = new HashSet<int>();
             for (int i = 0; i < numLoot; i++) {
                 int listIndex = Random.Range(0, allLootList.Count);
                 Loot loot = allLootList[listIndex];
@@ -57,14 +61,18 @@ public class LootManager : MonoBehaviour {
                 allLootList.RemoveAt(listIndex);
             }
             foreach (Loot loot in allLootList) {
-                if (Random.Range(0f, 1f) < 0.5f) {
+                if (Random.Range(0f, 1f) < 0.15f) {
                     int powerUpIndex = Random.Range(0, powerUps.Length);
                     GameObject.Instantiate(powerUps[powerUpIndex], loot.transform.position, Quaternion.identity);
+                    selectedPowerUps.Add(loot.lootIndex);
                 }
             }
         } else {
             foreach (Loot loot in allLoot) {
                 loot.gameObject.SetActive(selectedLoot.Contains(loot.lootIndex));
+                if (selectedPowerUps.Contains(loot.lootIndex)) {
+                    GameObject.Instantiate(powerUps[0], loot.transform.position, Quaternion.identity);
+                }
             }
         }
         LootDisplay.instance.CreateLootImages(numLoot, numNeededLoot);

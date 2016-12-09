@@ -32,6 +32,7 @@ public class CarInteraction : MonoBehaviour,Interactable {
 	void Update () {
         if (playerIn)
         {
+            Player.transform.position = transform.position;
             //float hor = Input.GetAxisRaw("Horizontal");
             //float vert = Input.GetAxisRaw("Vertical");
             //transform.position = new Vector3(transform.position.x + hor, transform.position.y, transform.position.z + vert);
