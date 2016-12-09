@@ -38,7 +38,7 @@ public class CreditsController : MonoBehaviour {
         "AI: RAIN AI\n" +
         "Camera: Unity stealth game tutorial\n" +
         "Character Models/ Animations: Mixamo\n" +
-        "Environment Art: Manufactura K4, ProBuilder\n" +
+        "Environment Art: ProBuilder\n" +
         "Font: Pirulen\n" +
         "Image Effects: Unity standard assets\n" +
         "Skyboxes: Cerberus\n" +
