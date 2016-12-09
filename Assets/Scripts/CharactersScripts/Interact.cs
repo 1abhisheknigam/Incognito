@@ -50,7 +50,7 @@ class Interact : MonoBehaviour {
             if (!prompted)
             {
                 if((Object)interactable != exit)
-                pM.showInteractMessage();
+                    pM.showInteractMessage();
                 else
                 {
                     if (inven.hasEnoughLoot) pM.showInteractMessage();
