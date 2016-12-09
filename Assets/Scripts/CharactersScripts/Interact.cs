@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿// Team Cryptowolves: Cheng Hann Gan, Odell Mizrahi, Battulga Myagmarjav, Abhishek Nigam, Jimmy Spearman
+using UnityEngine;
 
 /// <summary>
 /// Handles the player interacting with object.
