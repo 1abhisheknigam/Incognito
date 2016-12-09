@@ -51,7 +51,7 @@ public class FootStepper : MonoBehaviour {
         if (!playSound) {
             clip = null;
         }
-        float volume = 0.5f;
+        float volume = 0.25f;
         if (controller != null) {
             volume *= controller.velocity.magnitude;
         }
