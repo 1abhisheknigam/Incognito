@@ -10,8 +10,10 @@ public class promptManager : MonoBehaviour {
     private static string loot_incomplete_message = "You haven't collected enough loot to escape yet!";
     private static string loot_partial_message = "You have collected enough loot to escape! Escape to the elevator, or collect them all!";
     private static string loot_complete_message = "You collected all the loot! Try to escape to the elevator exit alive!";
+    private static string start_message = "Collect loot and escape alive!";
     // Use this for initialization
     void Start () {
+        showStartMessage();
 	}
 	
 
@@ -34,6 +36,12 @@ public class promptManager : MonoBehaviour {
     public void showIncompleteLootMessage()
     {
         promptTextElem.text = loot_incomplete_message;
+        promptanim.SetTrigger("prompt");
+    }
+
+    public void showStartMessage()
+    {
+        promptTextElem.text = start_message;
         promptanim.SetTrigger("prompt");
     }
 
