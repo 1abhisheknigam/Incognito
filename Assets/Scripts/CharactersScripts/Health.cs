@@ -14,6 +14,9 @@ public class Health : MonoBehaviour {
         get { return health / maxHealth; }
     }
 
+	/// <summary> The particles emitted when the player takes damage. </summary>
+	public GameObject particle;
+
     /// <summary> Whether the player is dead. </summary>
     public bool dead {
         get { return health <= 0; }
@@ -30,16 +33,12 @@ public class Health : MonoBehaviour {
     /// <summary> The audio source on the player. </summary>
     private AudioSource audioSource;
 
-    /// <summary> The particles emitted when the player takes damage. </summary>
-    private ParticleSystem particles;
-
     /// <summary>
     /// Initializes the object.
     /// </summary>
     private void Start() {
         health = maxHealth;
         audioSource = GetComponent<AudioSource>();
-        particles = GetComponent<ParticleSystem>();
     }
 
     /// <summary>
@@ -54,7 +53,7 @@ public class Health : MonoBehaviour {
                 if (playSound) {
                     audioSource.PlayOneShot(damageSound);
                 }
-                particles.Emit(30);
+				particle.GetComponent<EllipsoidParticleEmitter>().Emit(30);
                 health -= damage;
                 if (health <= 0) {
                     Die();
