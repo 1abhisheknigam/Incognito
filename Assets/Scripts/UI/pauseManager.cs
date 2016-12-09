@@ -38,6 +38,7 @@ public class pauseManager : MonoBehaviour {
                 {
                     Time.timeScale = 1;
                     pauseCanvas.enabled = false;
+                    EventSystem.current.SetSelectedGameObject(null);
                 }
                 paused = !paused;
             }
