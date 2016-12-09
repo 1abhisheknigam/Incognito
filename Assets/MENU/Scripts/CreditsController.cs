@@ -44,8 +44,8 @@ public class CreditsController : MonoBehaviour {
         "Skyboxes: Cerberus\n" +
 		"Blood FX Pack: Robin Schmidt\n" +
 		"Sci-Fi Arsenal: Kenneth \"Archanor\" Foldal Moe\n" +
-        "Sounds: Adam_N, Apple loops, Avery Alexander, Phil25, pgi, senitiel, UncleSigmund\n" +
-        "Music: Hunter, Incognito by Avery Alexander -https://creativecommons.org/licenses/by-nc-sa/3.0/legalcode (unmodified)" + 
+        "Sounds: Adam_N, Apple loops, InspectorJ, Phil25, pgi, senitiel, UncleSigmund\n" +
+        "Music: \"Hunter\", \"Incognito\" by Avery Alexander -https://creativecommons.org/licenses/by-nc-sa/3.0/legalcode (unmodified)" + 
         "\n\n\n" +
         "COPYRIGHT: TEAM INCOGNITO\n" +
         "End\n";
